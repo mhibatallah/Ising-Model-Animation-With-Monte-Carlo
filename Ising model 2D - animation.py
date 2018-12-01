@@ -82,14 +82,6 @@ def flip_spin(site):
         spin_state[site] = 1 
     else:
         spin_state[site] = -1
-        
-### Function to calculate the helicity modulus along the lattice direction 'dir' (dir = 0 or 1) ###
-def getHelicityModulus(dir,T):
-  # *********************************************************************** #
-  # **********          2c) FILL IN CODE TO CALCULATE           *********** #
-  # **********             THE HELICITY MODULUS RHO             *********** #
-  # *********************************************************************** #
-    return 0
 
 ### Function to perform one Monte Carlo sweep ###
 def sweep():
@@ -132,10 +124,6 @@ plt.yticks([])
 for T in T_array:
   print('\nT = %f' %T)
   
-  #open a file where observables will be recorded:
-  fileName         = '%s/Ising_2d_L%d_T%.4f.txt' %(results_dir,L,T)
-  file_observables = open(fileName, 'w')
-  
   #equilibration sweeps:
   for i in range(n_eqSweeps):
     sweep()
@@ -143,12 +131,6 @@ for T in T_array:
   #start doing measurements:
   for i in range(n_measSweeps):
     sweep()
-
-    #Write the observables to file:
-    energy = getTotalEnergy()
-    helicityModulus = getHelicityModulus(0,T)
-    file_observables.write('%d \t %.8f \t %.8f \n' %(i, energy, helicityModulus))
-
       
   ### Loop to calculate x and y for each site number i (used for animation) ###:
     data = np.zeros((N_spins, N_spins)) 
