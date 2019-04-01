@@ -1,6 +1,7 @@
 ##################################################################################
 ### This code performs Monte Carlo simulation of the classical two-dimensional ising spin model
 ### model, assuming periodic boundary conditions.
+### Inspired from Prof. Lauren Hayward Sierens code on Monte Carlo simulation of the XY model.
 #####################################################################################
 
 import matplotlib.pyplot as plt
