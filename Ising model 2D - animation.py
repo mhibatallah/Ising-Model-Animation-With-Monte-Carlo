@@ -71,7 +71,7 @@ def getTotalEnergy():
     currEnergy += -J* ( (spin_state[i] * spin_state[neighbours[i,0]]) + (spin_state[i] * spin_state[neighbours[i,1]]) )
     return currEnergy
 
-### Function to calculate the total energy ###
+### Function to calculate the local energy ###
 def getEnergy(site):
     currEnergy = -J* ( ( spin_state[site]*spin_state[neighbours[site,0]]) + (spin_state[site]* spin_state[neighbours[site,1]]) + (spin_state[site] * spin_state[neighbours[site,2]]) + (spin_state[site] * spin_state[neighbours[site,3]]) )
     return currEnergy
